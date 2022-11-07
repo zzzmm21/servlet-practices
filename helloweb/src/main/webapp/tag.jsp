@@ -49,6 +49,9 @@
 	
 	<a href="hello.jsp?name=김홍록">hello로 가기</a>
 	<br/>
+	<a href="/helloweb/hello?name=김홍록">hello로 가기2</a>
+	
+	<br/>
 	<a href="form.jsp">홈으로 가기</a>
 </body>
 </html>
