@@ -11,7 +11,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form method="post" action="delete.jsp">
+	<form method="post" action="<%=request.getContextPath()%>">
 		<input type='hidden' name="no" value="<%=no %>">
 		<table>
 			<tr>
