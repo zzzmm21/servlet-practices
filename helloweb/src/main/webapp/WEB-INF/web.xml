@@ -19,4 +19,14 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cookie</display-name>
+    <servlet-name>Cookie</servlet-name>
+    <servlet-class>com.bitacademy.helloweb.sevlet.Cookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cookie</servlet-name>
+    <url-pattern>/Cookie</url-pattern>
+  </servlet-mapping>
 </web-app>

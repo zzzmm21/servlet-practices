@@ -1,4 +1,4 @@
-package com.bitacademy.helloweb.sevlet;
+package com.bitacademy.helloweb.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

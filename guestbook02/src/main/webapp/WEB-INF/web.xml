@@ -13,7 +13,7 @@
     <description></description>
     <display-name>GuestbookController</display-name>
     <servlet-name>GuestbookController</servlet-name>
-    <servlet-class>com.bitacademy.guestbook.controller.GuestbookControllerk</servlet-class>
+    <servlet-class>com.bitacademy.guestbook.controller.GuestbookController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GuestbookController</servlet-name>
