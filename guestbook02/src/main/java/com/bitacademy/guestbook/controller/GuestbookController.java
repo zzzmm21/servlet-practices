@@ -12,51 +12,40 @@ import javax.servlet.http.HttpServletResponse;
 import com.bitacademy.guestbook.dao.GuestbookDao;
 import com.bitacademy.guestbook.vo.GuestbookVo;
 
-
 public class GuestbookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		request
-		.getRequestDispatcher("/WEB-INF/index.jsp")
-		.forward(request, response);
 		
+		String action = request.getParameter("a");
 		
-		String action = request.getParameter("");
 		if("deleteform".equals(action)) {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/deleteform.jsp");
 			rd.forward(request, response);
-		}else if("add".equals(action)) {
-			request.setCharacterEncoding("utf-8");
-			String Name = request.getParameter("name");
-			String Password = request.getParameter("password");
-			String Contents = request.getParameter("contents");
-			
-			GuestbookVo vo = new GuestbookVo();
-			vo.setName(Name);
-			vo.setPassword(Password);
-			vo.setContents(Contents);
-			
-			new GuestbookDao().insert(vo);
-			
-			response.sendRedirect("/guestbook02");
-			
-		}else if("delete".equals(action)) {
-			request.setCharacterEncoding("utf-8");
-			String sno = request.getParameter("no");
-			Long no = Long.parseLong(sno);
+		} else if("delete".equals(action)) {
+			String no = request.getParameter("no");
 			String password = request.getParameter("password");
 			
-			new GuestbookDao().deleteByNoAndPassword(no, password);
+			new GuestbookDao().deleteByNoAndPassword(Long.parseLong(no), password);
+
+			response.sendRedirect(request.getContextPath() + "/gb");
+		} else if("add".equals(action)) {
+			String name = request.getParameter("name");
+			String password = request.getParameter("password");
+			String contents = request.getParameter("contents");
 			
-			response.sendRedirect("/guestbook02");
-		}else {
+			GuestbookVo vo = new GuestbookVo();
+			vo.setName(name);
+			vo.setPassword(password);
+			vo.setContents(contents);
+			
+			new GuestbookDao().insert(vo);
+			response.sendRedirect(request.getContextPath() + "/gb");
+		} else {
 			List<GuestbookVo> list = new GuestbookDao().findAll();
 			
 			request.setAttribute("list", list);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/index.jsp");
 			rd.forward(request, response);
 		}
@@ -65,5 +54,4 @@ public class GuestbookController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
