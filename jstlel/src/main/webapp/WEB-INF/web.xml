@@ -29,4 +29,15 @@
     <servlet-name>_02servlet</servlet-name>
     <url-pattern>/02</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>_03servlet</display-name>
+    <servlet-name>_03servlet</servlet-name>
+    <servlet-class>jstlel._03servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>_03servlet</servlet-name>
+    <url-pattern>/_03servlet</url-pattern>
+    <url-pattern>/03</url-pattern>
+  </servlet-mapping>
 </web-app>
