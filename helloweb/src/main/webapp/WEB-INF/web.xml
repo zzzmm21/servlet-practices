@@ -29,4 +29,24 @@
     <servlet-name>Cookie</servlet-name>
     <url-pattern>/Cookie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LifeCycleServlet</display-name>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>com.bitacademy.helloweb.servlet.LifeCycleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/lc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LifecycleServlet</display-name>
+    <servlet-name>LifecycleServlet</servlet-name>
+    <servlet-class>com.bitacademy.helloweb.servlet.LifeCycleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifecycleServlet</servlet-name>
+    <url-pattern>/lc</url-pattern>
+  </servlet-mapping>
 </web-app>
