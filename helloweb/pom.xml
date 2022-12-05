@@ -17,8 +17,6 @@
 	
 	<build>
 		<finalName>helloweb</finalName>
-
 	</build>
 		
 </project>
-
