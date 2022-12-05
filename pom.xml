@@ -34,7 +34,7 @@
 					<url>${tomcat.deploy.url}</url>
 					<server>tomcat-bitacademy</server>
 				</configuration>
-			</plugin>	
+			</plugin>			
 		</plugins>
 	</build>	
   <modules>
